@@ -23,7 +23,7 @@
         class="node-dark-background"
         >
       </rect>
-      <text :x="10" :y="30" font-size="14" font-weight="bold" fill="#000000">{{title}}</text>
+      <text :x="10" :y="30" font-size="14" font-weight="bold" fill="#000000" @click="clickedOn">{{title}} - ZZ</text>
       <g v-if="deletable" @click="deleteNode">
         <rect
           :x="width - 12"
@@ -121,6 +121,11 @@ export default {
 
     mouseleave() {
       this.titleFillOpacity = 0.25;
+    },
+
+    clickedOn() {
+      console.log("CLICKED");
+      this.title = "555";
     }
   }
 };
